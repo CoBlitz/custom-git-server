@@ -15,10 +15,13 @@ RUN mkdir -p /srv/git && \
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/entrypoint.sh /entrypoint.sh
 COPY docker/create-repo.sh /usr/local/bin/create-repo.sh
+COPY docker/delete-repo.sh /usr/local/bin/delete-repo.sh
 
 # Ensure scripts are executable
 RUN chmod +x /entrypoint.sh && \
     chmod +x /usr/local/bin/create-repo.sh
+
+RUN chmod +x /usr/local/bin/delete-repo.sh
 
 # Environment variables
 ENV FCGI_CHILDREN=4 \
