@@ -31,8 +31,8 @@ ENV FCGI_CHILDREN=4 \
 # Expose HTTP port
 EXPOSE 80
 
-# Define volume for Git repositories
-VOLUME ["/srv/git"]
+# Define volumes for Git repositories and templates
+VOLUME ["/srv/git", "/srv/git-templates"]
 
 # Set entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
